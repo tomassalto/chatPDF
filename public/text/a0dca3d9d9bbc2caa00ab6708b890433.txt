@@ -1,0 +1,138 @@
+SIDAD
+NACIONAL
+1972
+DEL
+COMAHUE
+FACULTAD DE INFORMATICA
+DEPARTAMENTO DE PROGRAMACION
+CÁTEDRA PROGRAMACIÓN WEB DINÁMICA
+TP Final para Examen Final
+Objetivo:
+Tener en cuenta que se evaluarán todas las buenas prácticas presentadas por la cátedra
+durante el cuatrimestre.
+Se espera que el alumno implemente una tienda On-Line que tendrá 2 vistas: una vista
+"pública" y otra "privada".
+Desde la vista pública se tiene acceso a la información de la tienda: dirección, medios
+de contacto, descripción y toda aquella información que crea importante desplegar.
+En la vista pública se deben presentar los productos a la venta, junto al promedio de
+valoraciones obtenidas para cada producto. Para el caso donde los usuarios
+requieren ver más detalle se debe mostrar cada valoración junto a los comentarios
+ingresados por los clientes.
+Además se podrá acceder a la vista privada de la aplicación, a partir del ingreso de un
+usuario y contraseña válida.
+Desde la vista privada, luego de concretar el proceso de autenticación y dependiendo los
+roles con el que cuenta el usuario que ingresa al sistema, se van a poder realizar
+diferentes operaciones.
+Los roles iniciales son: cliente, depósito y administrador.
+Pautas Básicas:
+1. La aplicación debe ser desarrollada sobre una arquitectura MVC (Modelo-Vista-
+Control) utilizando PHP como lenguaje de programación. Se propone una estructura
+de directorio inicial como la que se visualiza en la llustración.
+PWD_TPFinal
+Control
+Modelo
+Test
+util
+Vista
+▸ P configuracion.php
+2. La aplicación debe utilizar como mínimo 2 de las librerías presentadas por sus
+compañeros en el cursado, pueden usarse para implementar la funcionalidad que le
+parezca más adecuada.
+SIDAD
+NACIONAL
+DEL
+COMAHUE
+FACULTAD DE INFORMATICA
+DEPARTAMENTO DE PROGRAMACION
+CÁTEDRA PROGRAMACIÓN WEB DINÁMICA
+1972
+3. Se debe utilizar como punto de partida, la Base de Datos bdcarritocompras
+otorgada por la cátedra. Se deben agregar las tablas que crea necesarias para
+implementar la totalidad de la funcionalidad solicitada. Verificar la estructura de las
+tablas y realizar las modificaciones que crea necesarias.
+D
+B
+G
+·
+e
+e
+BDTPFinal
+VO bdcarritocompras menu
+idmenu: bigint(20)
+menombre: varchar(50)
+medescripcion: varchar(124)
+#idpadre: bigint(20)
+medeshabilitado: timestamp
+VO bdcarritocompras usuario
+idusuario: bigint (20)
+usnombre: varchar(50)
+#uspass: int(11)
+usmail: varchar(50)
+Obdcarritocompras menurol
+idmenu: bigint(20)
+idrol: bigint(20)
+Obdcarritocompras usuariorol
+idusuario: bigint(20)
+idrol: bigint(20)
+usdeshabilitado: timestamp
+vo
+bdcarritocompras rol
+a idrol: bigint(20)
+rodescripcion: varchar(50)
+vo bdcarritocompras compra
+&idcompra: bigint(20)
+cofecha : timestamp
+idusuario: bigint(20)
+vo bdcarritocompras compraitem
+idcompraitem: bigint(20) unsigned
+#idproducto: bigint(20)
+#idcompra: bigint(20)
+#cicantidad: int(11)
+Obdcarritocompras compraestado
+8 idcompraestado: bigint(20) unsigned
+idcompra: bigint(11)
+#idcompraestadotipo: int(11)
+cefechaini: timestamp
+cefechafin : timestamp
+vo bdcarritocompras compraestadotipo
+& idcompraestadotipo: int(11)
+cetdescripcion: varchar(50)
+cetdetalle varchar(256)
+vo bdcarritocompras producto
+aidproducto: bigint(20)
+#pronombre: int(11)
+prodetalle varchar(512)
+#procantstock: int(11)
+4. La aplicación tendrá páginas públicas y otras restringidas, que sólo podrán ser
+accedidas a partir de un usuario y contraseña. Utilizar el módulo de autenticación
+implementado en TP5. La aplicación debe tener como mínimo los siguientes roles:
+cliente, depósito y administrador.
+5. El menú de la aplicación debe ser un menú dinámico que pueda ser gestionado por
+el administrador de la aplicación. Las tablas de la base de datos vinculadas a esta
+información son: menu y menurol.
+6. Cualquier usuario que tenga más de un rol asignado, puede cambiar de rol según lo
+desee.
+7. Desde la aplicación un usuario con rol Cliente podrá:
+a. Gestionar los datos de su cuenta, como cambiar su e-mail y contraseña.
+b. Realizar la compra de uno o más productos con stock suficiente.
+c. Podrá hacer una valoración de los productos comprados, luego que los
+mismos se entreguen. La valoración es un número entre 1 y 5 junto a un
+texto que explique los motivos para la misma.
+8. Desde la aplicación un usuario con rol Deposito podrá:
+a. Crear nuevos productos y administrar los existentes.
+b. Acceder a los procedimientos que permite el cambio de estado de los
+productos.
+c. Modificar el stock de los productos.
+9. Desde la aplicación un usuario con rol Administrador podrá:
+a. Crear nuevos usuarios al sistema, asignar los roles correspondientes y
+actualizar la información que se requiera.
+SIDAD
+NACIONAL
+DEL
+COMAHUE
+FACULTAD DE INFORMATICA
+DEPARTAMENTO DE PROGRAMACION
+CÁTEDRA PROGRAMACIÓN WEB DINÁMICA
+1972
+b. Gestionar y administrar nuevos roles e ítem del menú. Vinculando item del
+menú al rol según corresponda.

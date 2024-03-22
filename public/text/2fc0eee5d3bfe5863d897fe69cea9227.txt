@@ -1,0 +1,56 @@
+Empresa "Talento Encontrado"
+Segundo Parcial ADYD 2023
+Una consultora de Recursos Humanos necesita sistematizar su proceso de
+búsqueda de candidatos para la selección de un puesto de trabajo.
+Por un lado, la consultora cuenta con una cartera de clientes, es decir, empresas y
+organizaciones que la contratan para coordinar este proceso. De los clientes se conoce su
+cuit, razón social, categoría (Salud, Energía, Construcción, Educación, etc.), dirección. Cada
+cliente puede elegir solo una categoría.
+Por otro lado, la consultora cuenta con una base de datos de postulantes. De cada
+postulante se tiene su nombre, número de documento, correo electrónico, teléfono de
+contacto, fecha de nacimiento, dirección, provincia en la que vive, categorías y
+especialidades. Para cada categoría existe una lista de especialidades, por ejemplo, para la
+categoría Salud las especialidades podrían ser: Médico Generalista, Médico Especialista en
+Cardiología, Enfermero, etc.). Cada postulante puede aspirar a diferentes categorías y
+especialidades.
+Cuando un cliente solicita el inicio de una búsqueda, se identifica con su CUIT y
+debe indicar la fecha de inicio de la búsqueda, la fecha fin de la búsqueda, la
+especialización que se está buscando, tomada desde las especialidades definidas en la
+categoría del cliente.
+Una vez registrada la solicitud, la misma es asignada a un agente de la consultora,
+de manera balanceada, es decir los agentes pueden tener una o varias solicitudes
+asignadas. Luego se arma el conjunto de postulantes que califican para esa solicitud. Se
+buscan aquellos postulantes que ya se encuentran registrados en la base de datos, y que
+coinciden con la especialidad definida. Se informa al cliente la lista de postulantes
+seleccionados.
+Finalmente, cuando el proceso termina, considerando la fecha de fin de la
+búsqueda, y el cliente define cuáles son los 3 postulantes que fueron seleccionados para el
+puesto, se cambia su estado a "Seleccionado", se agrega el orden de mérito (primer,
+segundo, tercer lugar) y se cierra la búsqueda.
+Todos los postulantes que participaron en esta búsqueda estarán disponibles para
+otras búsquedas, incluso los que hayan sido seleccionados.
+Sería útil para los jefes de la consultora poder saber cantidades de búsquedas que
+se llevaron a cabo entre dos fechas seleccionadas y cantidad de candidatos encontrados
+para cada una de ellas. También es importante saber la estadística de cada agente de la
+consultora en cuanto al total de solicitudes que procesaron en el último mes.
+Para la descripción de dominio:
+1. Realizar un diagrama de clases para el sistema.
+Identificar:
+• Clases principales
+• Atributos y Métodos principales de cada una
+Relaciones y cardinalidad entre las clases
+•
+2. Realizar un diagrama de actividades que involucre todo el ciclo de vida de una solicitud
+de búsqueda: Desde el inicio de la búsqueda hasta que se cierra la búsqueda.
+Identificar:
+Actividades relacionadas
+Paralelismo entre actividades
+•
+·
+Carriles
+.
+·
+·
+Bifurcaciones/ Decisiones
+Flujos de control
+Objetos (instancias de clases)
