@@ -40,11 +40,12 @@
 
 {#if files.accepted.length == 0}
   <Dropzone
+    containerStyles="border-color:black"
     accept="application/pdf"
     multiple={false}
     on:drop={handleFilesSelect}
   >
-    Arrastra hasta aca tu PDF</Dropzone
+    <span style="color:black">Arrastra hasta aca tu PDF</span></Dropzone
   >
 {/if}
 <ol>
